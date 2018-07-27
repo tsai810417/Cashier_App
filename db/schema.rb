@@ -31,4 +31,14 @@ ActiveRecord::Schema.define(version: 2018_07_20_220602) do
     t.string "sugar", default: "100", null: false
     t.string "ice", default: "100", null: false
   end
+
+  create_table "orders", force: :cascade do |t|
+    t.boolean "paid", default: false, null: false
+    t.integer "subtatol_cents", default: 0, null: false
+    t.integer "tax_cents", default: 0, null: false
+    t.float "tax_rate", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "balance_cents", default: 0, null: false
+  end
 end
