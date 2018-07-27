@@ -20,4 +20,15 @@ ActiveRecord::Schema.define(version: 2018_07_20_220602) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "line_products", force: :cascade do |t|
+    t.integer "quantity"
+    t.integer "price_cents"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "order_id", null: false
+    t.integer "product_id", null: false
+    t.string "sugar", default: "100", null: false
+    t.string "ice", default: "100", null: false
+  end
 end
